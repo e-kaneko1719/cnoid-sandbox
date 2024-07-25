@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cnoid-sandbox</name>
+  <version>0.0.1</version>
+  <description>The sandbox package</description>
+
+  <license>MIT</license>
+
+  <buildtool_depend>colcon</buildtool_depend>
+  <depend>choreonoid</depend>  
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>
