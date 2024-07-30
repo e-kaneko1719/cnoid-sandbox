@@ -43,3 +43,12 @@ FireCabinet_Door.body
 
 ![Screenshot from 2024-07-23 09-30-25](https://github.com/user-attachments/assets/fc34938a-25db-432c-bab1-eac202c554c5)
 
+TankPlatformをまとめたもの
+![TankPlatform](https://github.com/user-attachments/assets/854c8806-18e5-427b-aac3-d99c4ed8c219)
+![TankPlatformNoHandrails](https://github.com/user-attachments/assets/646ac63f-9aad-4216-b7ce-b546250d3415)
+
+押し続けると倒れる破壊可能なポール
+[BreakableJointPole.webm](https://github.com/user-attachments/assets/dcd5608c-b04d-4fe2-b291-5b463516435b)
+
+押し続けると倒れる元の位置に復帰可能なポール
+[MagneticJointPole.webm](https://github.com/user-attachments/assets/7545f2d9-e3b6-4582-b848-30bc09483770)
