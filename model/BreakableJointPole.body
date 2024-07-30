@@ -20,7 +20,7 @@ links:
     #translation: [ 0, 0, -0.1 ]
     #rotation: [ 0, 0, 0, 180 ]
     jointType: free
-    density: 55.6
+    density: 1.0
     mass: 1.0
     inertia: [
       0.6, 0,   0,
@@ -31,7 +31,6 @@ links:
       -
         type: Shape
         translation: [ 0, 0, 0.05 ]
-        #geometry: { type: Box, size: [0.3, 0.1, 0.3 ]}
         geometry: { type: Sphere, radius: 0.05}
         appearance: { material: { diffuseColor: [ 0.53, 0.7, 0.87 ] }}
       -
@@ -45,12 +44,14 @@ links:
         isOptional: true
         link1Name: Socket
         link2Name: Plug
-        jointType:  
+        jointType: revolute 
+        position: [ 0, 0, 0.05 ]
+        jointAxis: [ 1, 0, 0 ]
         jointRange: [ 0, 0 ]
-        #jointType: fixed 
-        translation: [ 0.0, 0.0, 1.0 ]
+        jointCompliance: 1e-8
+        jointSpookDamping: 1.0 
         breakType: force
-        breakLimitForce: 5.0
-        validAxis: [ 1, 0, 0 ]
-        signedAxis: [ 0, 0, 0 ]
-        period: 3.0
+        breakLimitForce: 200.0
+        period: 1.0
+        validAxis: [ 1, 1, 1 ]
+        signedAxis: [ 0, 0, 1 ]
