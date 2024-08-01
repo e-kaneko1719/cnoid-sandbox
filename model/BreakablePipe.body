@@ -1,0 +1,114 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: BreakablePipe
+
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 20.0
+    centerOfMass: [ 0.0, 0.0, 0.0 ]
+    elements:
+      -
+        type: MarkerDevice
+        name: DestructionMarker
+        markerType: sphere
+        color: [ 1, 1, 0 ]
+        size: 0.001f
+        transparency: 0.5
+  -
+    name: PIPE_ROOT
+    parent: BASE
+    jointType: fixed
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          radius: 0.25
+          height: 0.5
+        appearance:
+          material:
+            diffuseColor: [ 0.4, 0.4, 0.4 ]
+            #specularColor: [ 0.96, 0.96, 0.96 ]
+            #shininess: 0.12
+  -
+    name: PIPE_P1
+    parent: PIPE_ROOT
+    #translation: [ 0, 0.5, 0 ]
+    translation: [ 0, 0.55, 0 ]
+    jointType: free
+    elements:
+      Shape:
+        geometry:
+          type: Cylinder
+          radius: 0.25
+          height: 0.5
+        appearance:
+          material:
+            diffuseColor: [ 0.5, 0.2, 0.2 ]
+            specularColor: [ 0.6, 0.6, 0.6 ]
+            #shininess: 0.12
+  -
+    name: PIPE_ROOT_P1_JOINT
+    #parent: PIPE_P1
+    parent: PIPE_ROOT
+    translation: [ 0, 0.275, 0 ]
+    jointType: fixed
+    jointAxis: [ 0, 1, 0 ]
+    elements:
+      -
+        type: Shape
+        geometry:
+          type: Cylinder
+          radius: 0.2
+          height: 0.05
+      -
+        type: ForceSensor
+        name: PIPE_ROOT_P1_JOINT_FORCE_SENSOR
+        id: 0
+      - &PIPE_CONSTRAINT
+        type: AGXBreakableJointDevice
+        name: PIPE_ROOT_P1_JOINT_CONSTRAINT
+        isOptional: true
+        link1Name: PIPE_ROOT
+        link2Name: PIPE_P1
+        position: [ 0, 0.275, 0 ]
+        jointAxis: [ 0, 1, 0 ]
+        jointRange: [ 0, 0 ]
+        jointCompliance: 1.0e-8
+        jointSpookDamping: 0.33
+        #breakType: force
+        breakType: none
+        #breakLimitForce: 1000
+        period: 2.0
+        validAxis: [ 1, 0, 1 ]
+        signedAxis: [ 0, 0, 0 ]
+#        elements:
+#          -
+#            type: Shape
+#            geometry:
+#              type: Sphere
+#              radius: 0.025
+#            appearance:
+#              material:
+#                diffuseColor: [ 1.0, 0.0, 0.0 ]
+#                #specularColor: [ 0.96, 0.96, 0.96 ]
+#                #shininess: 0.12
+#  -
+#    name: PIPE_P2
+#    parent: PIPE_P1
+#    translation: [ 0, 0.475, 0 ]
+#    jointType: free
+#    elements:
+#      Shape:
+#        geometry:
+#          type: Cylinder
+#          radius: 0.5
+#          height: 0.45
+#        appearance:
+#          material:
+#            diffuseColor: [ 0.9, 0.5, 0.9 ]
+#            specularColor: [ 0.96, 0.96, 0.96 ]
+#            shininess: 0.12
