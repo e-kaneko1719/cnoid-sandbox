@@ -42,18 +42,13 @@ io->os() << "BreakableDoorController::initialize START!!: " << endl;
             { "DOOR_UPPER_HINGE_FORCE_SENSOR", "DOOR_UPPER_HINGE_CONSTRAINT" },
             { "DOOR_LOWER_HINGE_FORCE_SENSOR", "DOOR_LOWER_HINGE_CONSTRAINT" }
         };
-//        targets = {
-//            { "DOOR_UPPER_HINGE_FORCE_SENSOR", "DOOR_UPPER_HINGE_CONSTRAINT" }
-//        };
 
         auto body = io->body();
         auto iter = targets.begin();
-io->os() << "BreakableDoorController: 01 " << endl;
         while(iter != targets.end()){
             auto& target = *iter;
             target.forceSensor = body->findDevice<ForceSensor>(target.sensorName);
             target.breakableJoint = body->findDevice(target.jointName);
-io->os() << "BreakableDoorController: 02 " << endl;
             if(target.forceSensor && target.breakableJoint){
                 target.link = target.forceSensor->link();
                 io->enableInput(target.forceSensor);
@@ -64,32 +59,24 @@ io->os() << "BreakableDoorController: 02 " << endl;
                 iter = targets.erase(iter);
             }
         }
-io->os() << "BreakableDoorController: 03 " << endl;
 
         io->os() << io->controllerName() << ": ";
         if(targets.empty()){
-            io->os() << "No spreader target was found." << endl;
             return false;
         }
-        io->os() << targets.size() << " spreader targets have been found." << endl;
 
 
         marker = body->findDevice<MarkerDevice>("DestructionMarker");
-io->os() << "BreakableDoorController: 04 " << endl;
         if(!marker){
             io->os() << "DestructionMarker was not found." << endl;
             return false;
         }
-io->os() << "BreakableDoorController: 05 " << endl;
         io->enableInput(marker);
         marker->on(false);
         marker->setMarkerSize(0.24);
-io->os() << "BreakableDoorController: 06 " << endl;
         marker->notifyStateChange();
-io->os() << "BreakableDoorController: 07 " << endl;
         markerBlinkIteration = 0;
 
-io->os() << "BreakableDoorController: 11 " << endl;
         return !targets.empty();
     }
 
@@ -106,19 +93,12 @@ io->os() << "BreakableDoorController: 11 " << endl;
         for(auto& target : targets){
             double fy = target.forceSensor->f().y();
             if(fy > 100.0){
-		//***************************
-                io->os() << "fy: " << fy << endl;
-		//***************************
                 //doRequestToSpread = true;
                 if(target.breakableJoint->on()){
                     target.timeToBreak += timeStep;
                     if(target.timeToBreak > 2.0){
                         target.breakableJoint->on(false);
                         target.breakableJoint->notifyStateChange();
-
-		        //*********************************
-                        io->os() << "BREAK!!: " << target.jointName << endl;
-		        //*********************************
 
                         markerBlinkIteration = 7;
                         markerBlinkTimer = 0.0;
