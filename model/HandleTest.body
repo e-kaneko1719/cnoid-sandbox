@@ -106,6 +106,31 @@ links:
         translation: [ 0.0055, 0.005, 0.4625 ]
         geometry: { type: Box, size: [ 0.011, 0.75, 0.875 ] }
         #appearance: *RED
+      -
+        type: Transform
+        translation: [ -0.01, 0, 0.045 ]
+        centerofMass: [ 0, 0, 0 ]
+        mass: 1.0
+        inertia: [
+          0.1, 0,    0,
+          0,   0.1,  0,
+          0,   0,    0.1 ]
+        elements:
+          -
+            type: Shape
+            translation: [ 0.024875, 0.0, 0.0 ]
+            rotation: [ 0, 0, 1, 90 ]
+            geometry: { type: Cylinder, radius: 0.03, height: 0.07 }
+          -
+            type: SpotLight
+            name: Light
+            direction: [ 1, 0, 0 ]
+            beam_width: 36
+            cut_off_angle: 40
+            cut_off_exponent: 6
+            attenuation: [ 1, 0, 0.01 ]
+            color: [ 0, 0, 0.8 ]
+            on: true
   -
     name: BASE_BOTTOM
     parent: BASE

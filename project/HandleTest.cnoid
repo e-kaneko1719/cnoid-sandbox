@@ -17,35 +17,9 @@ items:
       children:
         -
           id: 2
-          name: "Floor"
-          plugin: Body
-          class: BodyItem
-          is_checked: true
-          data:
-            file: "../../../share/model/misc/floor.body"
-            format: CHOREONOID-BODY
-            rootPosition: [ 6, 8, -0.1 ]
-            rootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
-            initialRootPosition: [ 6, 8, -0.1 ]
-            initialRootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
-            fix_root: true
-            collisionDetection: true
-            selfCollisionDetection: false
-            lock_location: false
-            scene_sensitive: true
-            zmp: [ 0, 0, 0 ]
-        -
-          id: 3
           name: "FireCabinet"
           plugin: Body
           class: BodyItem
-          is_selected: true
           is_checked: true
           data:
             file: "../model/HandleTest.body"
@@ -69,7 +43,7 @@ items:
             zmp: [ 0, 0, 0 ]
           children:
             -
-              id: 4
+              id: 3
               name: "SimpleController"
               plugin: Body
               class: SimpleControllerItem
@@ -80,6 +54,32 @@ items:
                 base_directory: "Controller directory"
                 reloading: false
                 export_symbols: false
+        -
+          id: 4
+          name: "Floor"
+          plugin: Body
+          class: BodyItem
+          is_selected: true
+          is_checked: true
+          data:
+            file: "../model/floor_white.body"
+            format: CHOREONOID-BODY
+            rootPosition: [ 8, 8, -0.1 ]
+            rootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            initialRootPosition: [ 8, 8, -0.1 ]
+            initialRootAttitude: [
+              1, 0, 0,
+              0, 1, 0,
+              0, 0, 1 ]
+            fix_root: true
+            collisionDetection: true
+            selfCollisionDetection: false
+            lock_location: false
+            scene_sensitive: true
+            zmp: [ 0, 0, 0 ]
 views:
   -
     id: 0
@@ -96,7 +96,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ 1, 2, 3 ]
+      expanded: [ 1, 2 ]
   -
     id: 3
     plugin: Base
@@ -128,9 +128,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 19.153, 9.57652, 4.43061 ]
-          direction: [ -0.880451, -0.440225, -0.17609 ]
-          up: [ -0.1575, -0.0787496, 0.984374 ]
+          eye: [ 24.4577, 27.6659, 10.6292 ]
+          direction: [ -0.655469, -0.707632, -0.263851 ]
+          up: [ -0.1793, -0.193569, 0.964563 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -236,8 +236,8 @@ toolbars:
     interval_time: 5
 Body:
   "BodySelectionManager":
-    current_body_item: 3
-    current_link: "BASE"
+    current_body_item: 4
+    current_link: "Floor"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -255,7 +255,7 @@ Body:
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 3
+        body_item: 4
         show_cm: false
         show_cm_projection: false
         show_zmp: false

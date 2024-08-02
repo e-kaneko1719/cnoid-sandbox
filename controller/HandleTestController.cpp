@@ -4,7 +4,7 @@
 #include <cnoid/SceneGraph>
 #include <cnoid/MarkerDevice>
 //#include "FireController.h"
-
+#include <cnoid/SpotLight>
 using namespace std;
 using namespace cnoid;
 
@@ -30,6 +30,8 @@ class HandleTestController : public SimpleController
     MarkerDevice* marker;
     //FireController* fireController;
     int mode;
+
+    SpotLight* light;
     
 public:
 
@@ -51,6 +53,7 @@ public:
         //reactionJoint2 = body->link("HOSE_NOZZLE_WATER_REACTION_JOINT2");
         //water = body->findDevice<FountainDevice>("WATER");
         //marker = body->findDevice<MarkerDevice>("MARKER");
+	light = body->findDevice<SpotLight>("Light");
 
         if( !valve ){
             io->os() << "HoseNozzleController: Eequired body components are not completely detected." << endl;
@@ -109,9 +112,20 @@ public:
                 //    io->os() << "The hose is connected to the nozzle" << endl;
                 //}
             }
-	    io->os() << "handle: " << valve->q()  << endl;
             isValveOpened = (valve->q() >= radian(90.0));
         }
+
+	io->os() << "handle: " << valve->q()  << ", light->on(): " << light->on() << ", light->color(): " << light->color() << endl;
+	if(valve->q() > 0.0){
+	  light->setColor(Vector3f(1.0, 0.0, 0.0));
+          light->on(true);
+	  light->notifyStateChange();
+	}else{
+	  light->setColor(Vector3f(0.0, 1.0, 0.0));
+          //light->on(false);
+          light->on(true);
+	  light->notifyStateChange();
+	}
 
 /*
         if(!water->on()){
