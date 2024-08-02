@@ -3,3 +3,4 @@ choreonoid_add_simple_controller(BreakableDoorController BreakableDoorController
 target_link_libraries(BreakableDoorController DoorBreakerController)
 
 choreonoid_add_simple_controller(BreakablePipeController BreakablePipeController.cpp)
+choreonoid_add_simple_controller(HandleTestController HandleTestController.cpp)
