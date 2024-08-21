@@ -1,0 +1,581 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: PipeBG1 # WRS_P_1F_pipe_b_g_1
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 200.0
+    inertia: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0 ]
+  -
+    name: PIPE1
+    parent: BASE
+    jointType: fixed
+    elements:
+      RigidBody:
+        elements:
+          -
+            name: PIPE_B_1
+            type: Transform
+            translation: [ 7.251, 8.8015, 0.9926 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &PIPE_B_1
+              Shape: { geometry: { type: Cylinder, radius: 0.045, height: 1.652 } }
+          -
+            name: ATTACHMENT_1
+            type: Transform
+            translation: [ 6.419, 8.8015, 0.9928 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &ATTACHMENT_1
+              Shape: { geometry: { type: Cylinder, radius: 0.092, height: 0.036 } }
+          -
+            name: PIPE_B_2
+            type: Transform
+            translation: [ 6.394, 8.8024, 0.9926 ]
+            rotation: [ 0, 0, 1, 80 ]
+            elements: &PIPE_B_2
+              Shape: { geometry: { type: Cylinder, radius: 0.045, height: 0.03 } }
+          -
+            name: PIPE_B_3
+            type: Transform
+            translation: [ 6.3745, 8.8073, 0.9926 ]
+            rotation: [ 0, 0, 1, 68 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_4
+            type: Transform
+            translation: [ 6.358, 8.816, 0.9926 ]
+            rotation: [ 0, 0, 1, 54 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_5
+            type: Transform
+            translation: [ 6.3445, 8.828, 0.9926 ]
+            rotation: [ 0, 0, 1, 42 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_6
+            type: Transform
+            translation: [ 6.3335, 8.843, 0.9926 ]
+            rotation: [ 0, 0, 1, 30 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_7
+            type: Transform
+            translation: [ 6.326, 8.86, 0.9926 ]
+            rotation: [ 0, 0, 1, 16 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_8
+            type: Transform
+            translation: [ 6.3235, 9.095, 0.9926 ]
+            elements: &PIPE_B_8
+              Shape: { geometry: { type: Cylinder, radius: 0.045, height: 0.466 } }
+          -
+            name: PIPE_B_9
+            type: Transform
+            translation: [ 6.3255, 9.33, 0.9926 ]
+            rotation: [ 0, 0, 1, -16 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_10
+            type: Transform
+            translation: [ 6.3325, 9.347, 0.9926 ]
+            rotation: [ 0, 0, 1, -30 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_10
+            type: Transform
+            translation: [ 6.3435, 9.362, 0.9926 ]
+            rotation: [ 0, 0, 1, -42 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_11
+            type: Transform
+            translation: [ 6.3565, 9.374, 0.9926 ]
+            rotation: [ 0, 0, 1, -54 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_12
+            type: Transform
+            translation: [ 6.373, 9.383, 0.9926 ]
+            rotation: [ 0, 0, 1, -68 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_13
+            type: Transform
+            translation: [ 6.389, 9.388, 0.9926 ]
+            rotation: [ 0, 0, 1, -80 ]
+            elements: *PIPE_B_2
+          -
+            name: ATTACHMENT_2
+            type: Transform
+            translation: [ 6.4138, 9.393, 0.9928 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *ATTACHMENT_1
+          -
+            name: PIPE_B_14
+            type: Transform
+            translation: [ 6.9048, 9.393, 0.9926 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &PIPE_B_14
+              Shape: { geometry: { type: Cylinder, radius: 0.045, height: 0.946 } }
+          -
+            name: PIPE_B_15
+            type: Transform
+            translation: [ 7.844, 9.393, 0.9926 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *PIPE_B_8
+          -
+            name: ATTACHMENT_3
+            type: Transform
+            translation: [ 8.095, 9.393, 0.9928 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *ATTACHMENT_1
+          -
+            name: PIPE_B_16
+            type: Transform
+            translation: [ 8.12, 9.3905, 0.9926 ]
+            rotation: [ 0, 0, 1, 80 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_17
+            type: Transform
+            translation: [ 8.138, 9.385, 0.9926 ]
+            rotation: [ 0, 0, 1, 68 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_18
+            type: Transform
+            translation: [ 8.153, 9.376, 0.9926 ]
+            rotation: [ 0, 0, 1, 54 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_19
+            type: Transform
+            translation: [ 8.165, 9.3645, 0.9926 ]
+            rotation: [ 0, 0, 1, 42 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_20
+            type: Transform
+            translation: [ 8.1745, 9.351, 0.9926 ]
+            rotation: [ 0, 0, 1, 30 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_21
+            type: Transform
+            translation: [ 8.1815, 9.336, 0.9926 ]
+            rotation: [ 0, 0, 1, 16 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_22
+            type: Transform
+            translation: [ 8.184, 9.101, 0.9926 ]
+            elements: *PIPE_B_8
+          -
+            name: PIPE_B_23
+            type: Transform
+            translation: [ 8.1815, 8.866, 0.9926 ]
+            rotation: [ 0, 0, 1, -16 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_24
+            type: Transform
+            translation: [ 8.1745, 8.849, 0.9926 ]
+            rotation: [ 0, 0, 1, -30 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_25
+            type: Transform
+            translation: [ 8.1625, 8.8325, 0.9926 ]
+            rotation: [ 0, 0, 1, -42 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_26
+            type: Transform
+            translation: [ 8.1475, 8.819, 0.9926 ]
+            rotation: [ 0, 0, 1, -54 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_27
+            type: Transform
+            translation: [ 8.131, 8.81, 0.9926 ]
+            rotation: [ 0, 0, 1, -68 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_28
+            type: Transform
+            translation: [ 8.112, 8.804, 0.9926 ]
+            rotation: [ 0, 0, 1, -80 ]
+            elements: *PIPE_B_2
+          -
+            name: PIPE_B_29
+            type: Transform
+            translation: [ 8.098, 8.8025, 0.9926 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *PIPE_B_2
+          -
+            name: ATTACHMENT_4
+            type: Transform
+            translation: [ 8.083, 8.8015, 0.9928 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *ATTACHMENT_1
+  -
+    name: PIPE1_METER
+    parent: BASE
+    jointType: fixed
+    elements:
+      RigidBody:
+        elements:
+          -
+            name: METER_PIPE_1
+            type: Transform
+            translation: [ 7.2495, 9.394, 1.065 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements: &METER_PIPE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0135, height: 0.0925 } }
+          -
+            name: METER_VALVE_1
+            type: Transform
+            translation: [ 7.2326, 9.3939, 1.0823 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &METER_VALVE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.005, height: 0.012 } }
+          -
+            name: METER_HANDLE_1
+            type: Transform
+            translation: [ 7.2238, 9.3935, 1.0825 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: &METER_HANDLE_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0155, height: 0.0055 } }
+          -
+            name: METER_DISPLAY_1
+            type: Transform
+            translation: [ 7.2475, 9.3865, 1.1635 ]
+            elements: &METER_DISPLAY_1
+              Shape: { geometry: { type: Cylinder, radius: 0.0525, height: 0.03 } }
+
+
+  -
+    name: Handle_1
+    parent: BASE
+    jointType: fixed
+    elements:
+      RigidBody:
+        elements:
+          -
+            name: ATTACHMENT_17
+            type: Transform
+            translation: [ 7.3958, 9.393, 0.9928 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *ATTACHMENT_1
+
+          -
+            name: ATTACHMENT_18
+            type: Transform
+            translation: [ 7.593, 9.393, 0.9928 ]
+            rotation: [ 0, 0, 1, 90 ]
+            elements: *ATTACHMENT_1
+  -
+    name: PIPE1_VALVE_1
+    parent: BASE
+    jointType: fixed
+    translation: [ 7.4944, 9.393, 0.9928 ]
+    rotation: [ 0.577350269189626, 0.577350269189626, 0.577350269189626, 120 ]
+    elements:
+      RigidBody:
+        elements:
+          -
+            name: main_capsule
+            type: Transform
+            translation: [ 0.004, 0.005, 0.0 ]
+            rotation: [ 1, 0, 0, 90 ]
+            elements:
+              Shape:
+                geometry: { type: Capsule, radius: 0.062, height: 0.07 }
+#          -
+#            name: Valve226Cylinder1
+#            type: Transform
+#            translation: [ 0.004, 0.005, 0.089325 ]
+#            rotation: [ 1, 0, 0, 90 ]
+#            elements: &Valve226Cylinder1
+#              Shape:
+#                geometry: { type: Cylinder, radius: 0.08, height: 0.018 }
+#          -
+#            name: Valve226Cylinder2
+#            type: Transform
+#            translation: [ 0.004, 0.005, -0.08933 ]
+#            rotation: [ 1, 0, 0, 90 ]
+#            elements: *Valve226Cylinder1
+          -
+            name: Valve226Cylinder3
+            type: Transform
+            translation: [ 0.04863, 0.005, 0.0 ]
+            rotation: [ 0, 0, 1, 86 ]
+            elements:
+              Shape:
+                geometry: { type: Cylinder, radius: 0.03425, height: 0.0425 }
+          -
+            name: Valve226Cylinder4
+            type: Transform
+            translation: [ 0.07387, 0.0025, 0.0004 ]
+            rotation: [ 0, 0, 1, 86 ]
+            elements: &Valve226Cylinder4
+              Shape:
+                geometry: { type: Cylinder, radius: 0.04614, height: 0.00877 }
+          -
+            name: Valve226Cylinder5
+            type: Transform
+            translation: [ 0.07997, 0.0025, 0.0004 ]
+            rotation: [ 0, 0, 1, 86 ]
+            elements:
+              Shape:
+                geometry: { type: Cylinder, radius: 0.03984, height: 0.00377 }
+          -
+            name: Valve226Cylinder6
+            type: Transform
+            translation: [ 0.08612, 0.0016, 0.0004 ]
+            rotation: [ 0, 0, 1, 86 ]
+            elements: *Valve226Cylinder4
+          -
+            name: Valve226Cylinder7
+            type: Transform
+            translation: [ 0.09442, 0.001, 0.0004 ]
+            rotation: [ 0, 0, 1, 86 ]
+            elements:
+              Shape:
+                geometry: { type: Cylinder, radius: 0.01914, height: 0.00787 }
+          -
+            name: Valve226Cylinder8
+            type: Transform
+            translation: [ 0.10092, 0.00056, 0.00045 ]
+            rotation: [ 0, 0, 1, 86 ]
+            elements:
+              Shape:
+                geometry: { type: Cylinder, radius: 0.01054, height: 0.00507 }
+
+  -
+    name: PIPE1_VALVE_HANDLE_1
+    parent: PIPE1_VALVE_1
+    jointType: revolute
+    jointAxis: X
+    jointId: 0
+    # For the friction for AGX
+    jointMotor: true
+    jointMotorCompliance: 0.9
+    elements:
+      RigidBody:
+        mass: 4.0
+        inertia: [
+          0.1, 0.0, 0.0,
+          0.0, 0.1, 0.0,
+          0.0, 0.0, 0.1 ]
+        centerOfMass: [ -0.03, 0, 0 ]
+      RigidBody:
+        elements:
+          Transform:
+            translation: [ 0.12, 0, 0 ]
+            rotation: [ 0, 1, 0, 90 ]
+            elements:
+              -
+                name: handle213_box1
+                type: Transform
+                translation: [ 0.0, 0.0, -0.0065 ]
+                rotation: [ 0, 0, 1, 30 ]
+                elements: &handle213_box1
+                  Shape:
+                    geometry: { type: Box, size: [ 0.2, 0.0159, 0.017 ] }
+              -
+                name: handle213_box2
+                type: Transform
+                translation: [ 0.0, 0.0, -0.0065 ]
+                rotation: [ 0, 0, 1, 90 ]
+                elements: *handle213_box1
+              -
+                name: handle213_box3
+                type: Transform
+                translation: [ 0.0, 0.0, -0.0065 ]
+                rotation: [ 0, 0, 1, 150 ]
+                elements: *handle213_box1
+              -
+                name: handle_cylinder
+                type: Transform
+                translation: [ 0.0, 0.0, -0.0065 ]
+                rotation: [ 1, 0, 0, 90 ]
+                elements:
+                  Shape:
+                    geometry: { type: Cylinder, radius: 0.0195, height: 0.017 }
+              -
+                name: handle213_box4
+                type: Transform
+                translation: [ 0.0, 0.0, 0.0086 ]
+                rotation: [ 0, 0, 1, 30 ]
+                elements: &handle213_box4
+                  Shape:
+                    geometry: { type: Box, size: [ 0.0232, 0.0136, 0.013 ] }
+              -
+                name: handle213_box5
+                type: Transform
+                translation: [ 0.0, 0.0, 0.0086 ]
+                rotation: [ 0, 0, 1, 90 ]
+                elements: *handle213_box4
+              -
+                name: handle213_box6
+                type: Transform
+                translation: [ 0.0, 0.0, 0.0086 ]
+                rotation: [ 0, 0, 1, 150 ]
+                elements: *handle213_box4
+              # Right half
+              -
+                name: handle213_box7
+                type: Transform
+                translation: [ -0.013, -0.0966, -0.0065 ]
+                rotation: [ 0, 0, 1, -7.5 ]
+                elements: &handle213_box7
+                  Shape:
+                    geometry: { type: Box, size: [ 0.028, 0.016, 0.017 ] }
+              -
+                name: handle213_box8
+                type: Transform
+                translation: [ -0.0377, -0.0899, -0.0065 ]
+                rotation: [ 0, 0, 1, -22.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box9
+                type: Transform
+                translation: [ -0.0597, -0.0772, -0.0065 ]
+                rotation: [ 0, 0, 1, -37.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box10
+                type: Transform
+                translation: [ -0.0777, -0.0592, -0.0065 ]
+                rotation: [ 0, 0, 1, -52.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box11
+                type: Transform
+                translation: [ -0.0902, -0.0372, -0.0065 ]
+                rotation: [ 0, 0, 1, -67.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box12
+                type: Transform
+                translation: [ -0.0967, -0.0127, -0.0065 ]
+                rotation: [ 0, 0, 1, -82.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box13
+                type: Transform
+                translation: [ -0.0967, 0.0127, -0.0065 ]
+                rotation: [ 0, 0, 1, -97.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box11
+                type: Transform
+                translation: [ -0.0902, 0.0372, -0.0065 ]
+                rotation: [ 0, 0, 1, -112.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box10
+                type: Transform
+                translation: [ -0.0777, 0.0592, -0.0065 ]
+                rotation: [ 0, 0, 1, -127.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box9
+                type: Transform
+                translation: [ -0.0597, 0.0772, -0.0065 ]
+                rotation: [ 0, 0, 1, -142.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box8
+                type: Transform
+                translation: [ -0.0377, 0.0899, -0.0065 ]
+                rotation: [ 0, 0, 1, -157.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box7
+                type: Transform
+                translation: [ -0.013, 0.0966, -0.0065 ]
+                rotation: [ 0, 0, 1, -172.5 ]
+                elements: *handle213_box7
+              # Left half
+              -
+                name: handle213_box7
+                type: Transform
+                translation: [ 0.013, -0.0966, -0.0065 ]
+                rotation: [ 0, 0, 1, 7.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box8
+                type: Transform
+                translation: [ 0.0377, -0.0899, -0.0065 ]
+                rotation: [ 0, 0, 1, 22.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box9
+                type: Transform
+                translation: [ 0.0597, -0.0772, -0.0065 ]
+                rotation: [ 0, 0, 1, 37.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box10
+                type: Transform
+                translation: [ 0.0777, -0.0592, -0.0065 ]
+                rotation: [ 0, 0, 1, 52.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box11
+                type: Transform
+                translation: [ 0.0902, -0.0372, -0.0065 ]
+                rotation: [ 0, 0, 1, 67.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box12
+                type: Transform
+                translation: [ 0.0967, -0.0127, -0.0065 ]
+                rotation: [ 0, 0, 1, 82.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box13
+                type: Transform
+                translation: [ 0.0967, 0.0127, -0.0065 ]
+                rotation: [ 0, 0, 1, 97.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box11
+                type: Transform
+                translation: [ 0.0902, 0.0372, -0.0065 ]
+                rotation: [ 0, 0, 1, 112.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box10
+                type: Transform
+                translation: [ 0.0777, 0.0592, -0.0065 ]
+                rotation: [ 0, 0, 1, 127.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box9
+                type: Transform
+                translation: [ 0.0597, 0.0772, -0.0065 ]
+                rotation: [ 0, 0, 1, 142.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box8
+                type: Transform
+                translation: [ 0.0377, 0.0899, -0.0065 ]
+                rotation: [ 0, 0, 1, 157.5 ]
+                elements: *handle213_box7
+              -
+                name: handle213_box7
+                type: Transform
+                translation: [ 0.013, 0.0966, -0.0065 ]
+                rotation: [ 0, 0, 1, 172.5 ]
+                elements: *handle213_box7
