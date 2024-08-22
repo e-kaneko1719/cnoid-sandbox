@@ -1,0 +1,19 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: LargeTank-P3
+links:
+  -
+    name: Root
+    joint_type: fixed
+    center_of_mass: [ 0, 0, 0 ]
+    mass: 1
+    inertia: [ -24.528, 0, 0, 0, -11.736, 0, 0, 0, -24.528 ]
+    elements:
+      -
+        type: Shape
+        geometry:
+          type: Cylinder
+          radius: 2.0
+          height: 0.1
+        appearance: { material: { diffuse: [ 0.752941, 0.752941, 0.752941 ] } }
