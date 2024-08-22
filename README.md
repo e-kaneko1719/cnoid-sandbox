@@ -48,7 +48,24 @@ TankPlatformをまとめたもの
 ![TankPlatformNoHandrails](https://github.com/user-attachments/assets/646ac63f-9aad-4216-b7ce-b546250d3415)
 
 押し続けると倒れる破壊可能なポール
+
 [BreakableJointPole.webm](https://github.com/user-attachments/assets/dcd5608c-b04d-4fe2-b291-5b463516435b)
 
 押し続けると倒れる元の位置に復帰可能なポール
+
 [MagneticJointPole.webm](https://github.com/user-attachments/assets/7545f2d9-e3b6-4582-b848-30bc09483770)
+
+パイプをBreakableJointで接続し切断可能にする
+![パイプ切断1](https://github.com/user-attachments/assets/3ac8335e-f627-4d4a-9be1-b441b92895a2)![パイプ切断2](https://github.com/user-attachments/assets/38f22e27-658e-4ae5-b821-0cbf45859c88)
+
+パイプを切断する
+
+[BreakablePipe.webm](https://github.com/user-attachments/assets/7c5ae435-ef0e-4656-95b4-96f404d3735e)
+
+ハンドルの回転角度に応じた動作：ライトの色を変更する
+
+[HandleTest.webm](https://github.com/user-attachments/assets/2d4d908c-9dad-48e8-b3ff-d843c4d94354)
+
+
+
+
