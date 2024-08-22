@@ -10,6 +10,7 @@ items:
       name: "World"
       plugin: Body
       class: WorldItem
+      is_selected: true
       data:
         collision_detection: false
         collision_detector: AISTCollisionDetector
@@ -20,6 +21,7 @@ items:
           name: "Floor"
           plugin: Body
           class: BodyItem
+          is_selected: true
           is_checked: true
           data:
             file: "../model/floor.body"
@@ -45,6 +47,7 @@ items:
           name: "Floor"
           plugin: Body
           class: BodyItem
+          is_selected: true
           is_checked: true
           data:
             file: "../model/floor.body"
@@ -70,6 +73,7 @@ items:
           name: "TankPlatform"
           plugin: Body
           class: BodyItem
+          is_selected: true
           is_checked: true
           data:
             file: "../model/TankPlatform2.body"
@@ -83,7 +87,7 @@ items:
             initialRootAttitude: [
               -1, -1.21793806e-16, 1.28010448e-17,
               1.2246468e-16, -0.994521895, 0.104528463,
-              4.0583373e-27, 0.104528463, 0.994521895 ]
+              4.05833653e-27, 0.104528463, 0.994521895 ]
             fix_root: true
             collisionDetection: true
             selfCollisionDetection: false
@@ -95,6 +99,7 @@ items:
           name: "TankPlatform"
           plugin: Body
           class: BodyItem
+          is_selected: true
           is_checked: true
           data:
             file: "../model/TankPlatform2.body"
@@ -120,6 +125,7 @@ items:
           name: "TankPlatform"
           plugin: Body
           class: BodyItem
+          is_selected: true
           is_checked: true
           data:
             file: "../model/TankPlatformNoStair.body"
@@ -127,12 +133,12 @@ items:
             rootPosition: [ -1.16, 6.1, 0 ]
             rootAttitude: [
               0.990268069, 0.0241671554, 0.137058749,
-              0, 0.984807753, -0.173648178,
+              1.5867788e-11, 0.984807753, -0.173648178,
               -0.139173101, 0.171958246, 0.975223672 ]
             initialRootPosition: [ -1.16, 6.1, 0 ]
             initialRootAttitude: [
               0.990268069, 0.0241671554, 0.137058749,
-              1.58677863e-11, 0.984807753, -0.173648178,
+              1.81608374e-11, 0.984807753, -0.173648178,
               -0.139173101, 0.171958246, 0.975223672 ]
             fix_root: true
             collisionDetection: true
@@ -148,24 +154,77 @@ items:
           is_selected: true
           is_checked: true
           data:
-            file: "../../rtf-test-plant/model/1F/TankA.body"
+            file: "../model/HollowTank.body"
             format: CHOREONOID-BODY
-            rootPosition: [ -6.55, 0, 0 ]
+            rootPosition: [ -1, 6, -7.37503152e-17 ]
             rootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
-            initialRootPosition: [ 0, 0, 0 ]
+              6.123234e-17, -6.123234e-17, 1,
+              1, 3.74939946e-33, -6.123234e-17,
+              0, 1, 6.123234e-17 ]
+            initialRootPosition: [ -1, 6, -7.37503152e-17 ]
             initialRootAttitude: [
+              0, 0, 1,
               1, 0, 0,
-              0, 1, 0,
-              0, 0, 1 ]
+              0, 1, 0 ]
             fix_root: true
             collisionDetection: true
             selfCollisionDetection: false
             lock_location: false
             scene_sensitive: true
             zmp: [ 0, 0, 0 ]
+          children:
+            -
+              id: 8
+              name: "Target1"
+              plugin: Body
+              class: BodyItem
+              is_selected: true
+              is_checked: true
+              data:
+                file: "../../../sample/WRS2018/model/Target1.body"
+                format: CHOREONOID-BODY
+                rootPosition: [ -1, 6, 0.1 ]
+                rootAttitude: [
+                  1, 0, 0,
+                  0, 1, 0,
+                  0, 0, 1 ]
+                initialRootPosition: [ -1, 6, 0.1 ]
+                initialRootAttitude: [
+                  1, 0, 0,
+                  0, 1, 0,
+                  0, 0, 1 ]
+                fix_root: true
+                collisionDetection: true
+                selfCollisionDetection: false
+                lock_location: false
+                scene_sensitive: true
+                zmp: [ 0, 0, 0 ]
+            -
+              id: 9
+              name: "Target1"
+              plugin: Body
+              class: BodyItem
+              is_selected: true
+              is_checked: true
+              data:
+                file: "../../../sample/WRS2018/model/Target1.body"
+                format: CHOREONOID-BODY
+                rootPosition: [ -1, 6.59966305, 0.6 ]
+                rootAttitude: [
+                  1, -0, 0,
+                  0, 6.123234e-17, -1,
+                  0, 1, 6.123234e-17 ]
+                initialRootPosition: [ -1, 6.59966305, 0.6 ]
+                initialRootAttitude: [
+                  1, 0, 0,
+                  0, 2.22044605e-16, -1,
+                  0, 1, 2.22044605e-16 ]
+                fix_root: true
+                collisionDetection: true
+                selfCollisionDetection: false
+                lock_location: false
+                scene_sensitive: true
+                zmp: [ 0, 0, 0 ]
 views:
   -
     id: 0
@@ -182,7 +241,7 @@ views:
     class: ItemTreeView
     mounted: true
     state:
-      expanded: [ 1, 5 ]
+      expanded: [ 1, 5, 7 ]
   -
     id: 3
     plugin: Base
@@ -205,7 +264,7 @@ views:
     class: SceneView
     mounted: true
     state:
-      editMode: true
+      editMode: false
       viewpointOperationMode: thirdPerson
       visible_polygon_elements: [ face ]
       highlighting: false
@@ -214,9 +273,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 11.5723, -7.97435, 11.8351 ]
-          direction: [ -0.540123, 0.618782, -0.570417 ]
-          up: [ -0.375106, 0.429733, 0.821355 ]
+          eye: [ 2.77454, -5.60443, 17.2083 ]
+          direction: [ -0.221313, 0.557934, -0.799831 ]
+          up: [ -0.294911, 0.743476, 0.600225 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -322,8 +381,8 @@ toolbars:
     interval_time: 5
 Body:
   "BodySelectionManager":
-    current_body_item: 7
-    current_link: "BASE"
+    current_body_item: 2
+    current_link: "Floor"
   "KinematicFaultChecker":
     checkJointPositions: true
     angleMargin: 0
@@ -365,6 +424,16 @@ Body:
         show_cm: false
         show_cm_projection: false
         show_zmp: false
+      -
+        body_item: 8
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
+      -
+        body_item: 9
+        show_cm: false
+        show_cm_projection: false
+        show_zmp: false
   "SplineFilterDialog":
     isInputFrameRateSpecified: false
     inputFrameRate: 200
@@ -379,12 +448,12 @@ viewAreas:
     contents:
       type: splitter
       orientation: horizontal
-      sizes: [ 1887, 599 ]
+      sizes: [ 1845, 641 ]
       children:
         -
           type: splitter
           orientation: horizontal
-          sizes: [ 488, 1395 ]
+          sizes: [ 477, 1364 ]
           children:
             -
               type: splitter
