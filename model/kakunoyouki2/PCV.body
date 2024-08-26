@@ -1,0 +1,82 @@
+format: ChoreonoidBody
+format_version: 2.0
+angle_unit: degree
+name: P1
+links:
+  -
+    name: Root
+    joint_type: fixed
+    center_of_mass: [ 0, 0, 0 ]
+  -
+    name: Bottom
+    parent: Root
+    joint_type: fixed
+    rotation: [ 1, 0, 0, 90]
+    translation: [ 0, 0, 0.5 ]
+    elements:
+      type: Shape
+      geometry:
+        type: Cylinder
+        radius: 9.0 
+        height: 1.0
+  -
+    type: SubBody
+    prefix: P1_
+    parent: Root
+    uri: P1.body
+    translation: [ 0, 0, 3.5 ]
+    rotation: [[ 1, 0, 0, 90 ], [ 0, 1, 0, -7.5 ]]
+  - # 切り欠きあり
+    type: SubBody
+    prefix: P2_
+    parent: Root
+    uri: P2.body
+    rotation: [[ 1, 0, 0, 90 ], [ 0, 1, 0, -7.5 ]]
+    translation: [ 0, 0, 8 ]
+  -
+    type: SubBody
+    prefix: P3_
+    parent: Root
+    uri: P1.body
+    rotation: [[ 1, 0, 0, 90 ], [ 0, 1, 0, -7.5 ]]
+    translation: [ 0, 0, 12.5 ]
+  - # 入口
+    type: SubBody
+    prefix: P4_
+    parent: Root
+    uri: P3.body
+    rotation: [ 0, 0, 1, 90 ]
+    translation: [ 8.5, 0, 8 ]
+  - # 入口通路
+    type: SubBody
+    prefix: P5_
+    parent: Root
+    uri: P5.body
+    rotation: [ 0, 0, 1, 90 ]
+    translation: [ 11, 0, 8 ]
+  - # 入口通路
+    type: SubBody
+    prefix: P6_
+    parent: Root
+    uri: P4.body
+    rotation: [[ 1, 0, 0, 90 ], [ 0, 1, 0, -7.5 ]]
+    translation: [ 0, 0, 16.5 ]
+  -
+    type: SubBody
+    prefix: P7_
+    parent: Root
+    uri: P6.body
+    translation: [ 0, 0, 24 ]
+    rotation: [[ 1, 0, 0, 90 ], [ 0, 1, 0, -7.5 ]]
+  -
+    name: RPV
+    parent: Root
+    joint_type: fixed
+    rotation: [ 1, 0, 0, 90]
+    translation: [ 0, 0, 22 ]
+    elements:
+      type: Shape
+      geometry:
+        type: Capsule
+        radius: 2.5
+        height: 14
